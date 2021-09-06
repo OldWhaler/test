@@ -1,0 +1,13 @@
+.wrapper {
+  width: 500px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: tomato;
+}
+
+.element {
+  width: 250px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: lightgreen;
+}
