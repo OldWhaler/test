@@ -28,7 +28,7 @@ import { randomFillArray } from './functions.js'
 
 
 
-class Element {
+/* class Element {
   constructor({ tagName, tagText, tagParent, tagClass, bgColor = 'blue' }) {
     this.tagName = tagName;
     this.tagText = tagText;
@@ -55,7 +55,9 @@ const obj = {
 }
 
 
-new Element(obj).render();
+new Element(obj).render(); */
+
+console.log('Test!!!!!')
 
 
 
