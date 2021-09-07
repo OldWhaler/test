@@ -1,7 +1,7 @@
 // let url = 'https://jsonplaceholder.typicode.com/todos/1'
 
 
-import { randomFillArray } from './functions.js'
+import { randomFillArray } from './functions.js';
 
 // function render(parent, html, place) {
 //   parent.insertAdjacentHTML(place, html);
@@ -57,7 +57,7 @@ const obj = {
 
 new Element(obj).render(); */
 
-console.log('Test!!!!!')
+console.log('Test!!!!!');
 
 
 
