@@ -57,13 +57,7 @@ const obj = {
 
 new Element(obj).render(); */
 
-console.log('master')
-console.log('Push test')
 
-console.log('Second!!!')
-console.log('Second!!!')
-console.log('Second!!!')
-console.log('Second!!!')
 
 
 
