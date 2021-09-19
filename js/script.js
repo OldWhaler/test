@@ -57,9 +57,6 @@ const obj = {
 
 new Element(obj).render(); */
 
-console.log('Push test')
-
-console.log('Second!!!')
 
 
 
