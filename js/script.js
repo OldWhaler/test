@@ -64,3 +64,23 @@ new Element(obj).render(); */
 
 sleep(3000).then(() => console.log(3000)) */
 
+
+/* function sum(a, b, c) {
+  return a + b + c
+}
+
+function curry(func) {
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      return func.apply(this, args)
+    } else {
+      return function path(...args2) {
+        return curried.apply(this, [...args, ...args2])
+      }
+    }
+  }
+}
+
+const a = curry(sum);
+
+console.log(a(1)(2, 3)) */
