@@ -84,3 +84,30 @@ function curry(func) {
 const a = curry(sum);
 
 console.log(a(1)(2, 3)) */
+
+/* const wife = {
+  name: 'Katerina',
+  sername: 'Savina',
+  age: 32
+}
+
+const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json; charset=UTF-8'
+  },
+  body: JSON.stringify(wife)
+});
+if (response.ok) {
+  console.log(response.ok)
+  // console.log(response.headers.get('Content-Type'))
+  // for (let [key, value] of response.headers) {
+  //   console.log(`${key} : ${value}`)
+  // }
+
+  const data = await response.text();
+  document.body.insertAdjacentHTML('afterbegin', `<p>${data}</p>`)
+} else {
+  console.log(response.status)
+}
+ */
