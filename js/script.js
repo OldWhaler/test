@@ -84,3 +84,318 @@ function curry(func) {
 const a = curry(sum);
 
 console.log(a(1)(2, 3)) */
+
+
+//absent-vowel from ================================= codewars
+
+/* function absentVowel(x) {
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+
+  for (let i = 0; i < vowels.length; i++) {
+    if (x.indexOf(vowels[i]) == -1) return i
+  }
+} */
+
+//get-the-middle-character from ================================= codewars
+
+/* function getMiddle(s) {
+  if (s.length === 1) return s
+
+  return s.length % 2 === 0 ? `${s[s.length / 2 - 1]}${s[s.length / 2]}` : s[Math.floor(s.length / 2)]
+}
+ */
+
+//highest-and-lowest from ================================= codewars
+
+/* function highAndLow(numbers) {
+  const arr = numbers.split(' ').sort((a, b) => a - b)
+  return `${arr[arr.length - 1]} ${arr[0]}`
+} */
+
+//jaden-casing-strings from ================================= codewars
+
+/* function test(str) {
+  return str.split(' ')
+    .map(word => word[0].toUpperCase() + word.slice(1))
+    .join(' ')
+} */
+
+//disemvowel-trolls from ================================= codewars
+
+/* function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, '')
+} */
+
+//isograms from ========================================== codewars
+
+/* function isIsogram(str) {
+  const letters = str.toLowerCase().split('').sort()
+
+  for (let i = 0; i < letters.length - 1; i++) {
+    if (letters[i] === letters[i + 1]) return false
+  }
+  return true
+}
+//or
+function isIsogram(str) {
+  return str.length === new Set(str.toLowerCase()).size
+} */
+
+//nickname-generator ========================================== codewars
+
+/* function nicknameGenerator(name) {
+  if (name.length < 4) return "Error: Name too short"
+
+  return "aeiou".includes(name[2]) ? name.slice(0, 4) : name.slice(0, 3)
+} */
+
+//digits-explosion ========================================== codewars
+
+/* function explode(s) {
+  return s.split('').map(char => char.repeat(char)).join('')
+} */
+
+//handshake-problem ========================================== codewars
+
+/* function getParticipants(handshakes) {
+  if (handshakes === 0) return 1
+
+  let numberOfPeople = 1
+  while (true) {
+    const maxHandshakes = numberOfPeople * (numberOfPeople - 1) / 2 //calculate the maximum number of handshakes
+
+    if (maxHandshakes >= handshakes) return numberOfPeople
+
+    numberOfPeople++
+  }
+} */
+
+//reverse-or-rotate ========================================== codewars
+
+/* function revrot(str, sz) {
+  if (str === '' || sz <= 0 || sz > str.length) return ''
+
+  let result = ''
+
+  while (str.length >= sz) {
+    const chunk = str.slice(0, sz)
+
+    const modifiedChunkSum = chunk.split('').map(num => num ** 3).reduce((sum, cur) => sum += cur, 0)
+
+    result += modifiedChunkSum % 2 === 0 ? chunk.split('').reverse().join('') : chunk.slice(1) + chunk.slice(0, 1)
+
+    str = str.slice(sz)
+  }
+
+  return result
+} */
+
+//multiples-of-3-or-5 ========================================== codewars
+
+/* function solution(number) {
+  let result = 0
+
+  for (let i = 1; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) result += i
+  }
+
+  return result
+} */
+
+//head-tail-init-and-last ========================================== codewars
+
+/* function head(arr) {
+  return arr[0]
+}
+function tail(arr) {
+  return arr.slice(1)
+}
+function init(arr) {
+  return arr.slice(0, arr.length - 1)
+}
+function last(arr) {
+  return arr[arr.length - 1]
+} */
+
+//array-deep-count ========================================== codewars
+
+/* function deepCount(a) {
+  let result = a.length
+
+  a.forEach(elem => {
+    if (Array.isArray(elem)) result += deepCount(elem)
+  })
+
+  return result
+} */
+
+//valid-string ========================================== codewars
+
+/* function validWord(dictionary, word) {
+  return new RegExp(`^(${dictionary.join('|')})+?$`).test(word);
+}; */
+
+//sorting-by-bits ========================================== codewars
+
+/* function sortByBit(arr) {
+  function getNumberOfBits(num) {
+    return num.toString(2).split('').reduce((sum, cur) => sum += +cur, 0)
+  }
+
+  return arr.sort((a, b) => {
+    const numberOfBitsA = getNumberOfBits(a)
+    const numberOfBitsB = getNumberOfBits(b)
+
+    if (numberOfBitsA === numberOfBitsB) return a - b
+    return numberOfBitsA - numberOfBitsB
+  })
+} */
+
+//can-you-keep-a-secret ========================================== codewars
+
+/* function createSecretHolder(secret) {
+  return {
+    getSecret: () => secret,
+    setSecret: (val) => secret = val
+  }
+} */
+
+//the-coupon-code ========================================== codewars
+
+/* function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
+  if (enteredCode !== correctCode) return false
+
+  return new Date(currentDate) - new Date(expirationDate) < 0
+} */
+
+//unlucky-days ========================================== codewars
+
+/* function unluckyDays(year) {
+  let count = 0;
+  for (let i = 0; i < 12; i++) {
+    const date = new Date(year, i, 13)
+    if (date.getDay() === 5) count++
+  }
+  return count
+} */
+
+//human-readable-duration-format ========================================== codewars
+
+/* function formatDuration(seconds) {
+  if (seconds === 0) return "now"
+
+  const timeUnits = ['second', 'minute', 'hour', 'day', 'year']
+  let arr = []
+
+  // fill arr with the values of time units
+  for (let i = 0; i < 5; i++) {
+    if (i < 2) {
+      arr.push(seconds % 60)
+      seconds = (seconds - (seconds % 60)) / 60
+    }
+    if (i === 2) {
+      arr.push(seconds % 24)
+      seconds = (seconds - (seconds % 24)) / 24
+    }
+    if (i === 3) {
+      arr.push(seconds % 365)
+      seconds = (seconds - (seconds % 365)) / 365
+    }
+    if (i === 4) {
+      arr.push(seconds)
+    }
+  }
+
+  // add unit of time names and 's' if the unit of time is used in plural
+  arr = arr.map((elem, i) => {
+    if (elem > 0) {
+      elem = elem + ' ' + timeUnits[i] + `${elem > 1 ? 's' : ''}`
+    }
+    return elem
+  })
+
+  // remove time unit value if 0
+  arr = arr.filter(elem => elem != 0)
+
+  //separate by a comma and a space (", "). Except the last component, which is separated by " and "
+  if (arr.length > 1) {
+    arr = arr.map((elem, i) => {
+      if (i === 0) elem = ' and ' + elem
+      if (i > 1) elem += ', '
+      return elem
+    })
+  }
+
+  return arr.reverse().join('') //reverse array to right way and join elements
+} */
+
+//mylanguages ========================================== codewars
+
+/* function myLanguages(results) {
+  return Object.entries(results)
+    .filter(elem => elem[1] >= 60)
+    .sort((a, b) => b[1] - a[1])
+    .map(elem => elem[0])
+} */
+
+//run-length-encoding ========================================== codewars
+
+/* const runLengthEncoding = function (str) {
+  const arr = []
+  let index = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== str[i + 1]) {
+      arr.push(str.slice(index, i + 1))
+      index = i + 1
+    }
+  }
+
+  return arr.map(elem => [elem.length, elem[0]])
+} */
+//or
+// const runLengthEncoding = function (str) {
+//   return (str.match(/(.)\1*/g) || []).map(elem => [elem.length, elem[0]])
+// }
+
+//urban-dictionary ========================================== codewars
+
+/* const WordDictionary = function () {
+  this.set = new Set()
+};
+
+WordDictionary.prototype.addWord = function (word) {
+  this.set.add(word)
+};
+
+WordDictionary.prototype.search = function (word) {
+  const reg = new RegExp(`^${word}$`)
+  for (let value of this.set) {
+    if (reg.test(value)) return true
+  }
+  return false
+}; */
+
+
+//convert-a-linked-list-to-a-string ========================================== codewars
+
+/* function stringify(list) {
+  if (!list) return "null"
+
+  return list.next ? list.data + ' -> ' + stringify(list.next) : list.data + ' -> null'
+} */
+
+//fun-with-trees-array-to-tree ========================================== codewars
+
+/* function arrayToTree(array, index = 0) {
+  if (index >= array.length) return;
+
+  return new TreeNode(array[index], arrayToTree(array, 2 * index + 1), arrayToTree(array, 2 * index + 2))
+} */
+
+
+
+
+
+
+//
