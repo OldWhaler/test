@@ -242,13 +242,15 @@ function last(arr) {
     return num.toString(2).split('').reduce((sum, cur) => sum += +cur, 0)
   }
 
-  return arr.sort((a, b) => {
+  const result = arr.sort((a, b) => {
     const numberOfBitsA = getNumberOfBits(a)
     const numberOfBitsB = getNumberOfBits(b)
 
     if (numberOfBitsA === numberOfBitsB) return a - b
     return numberOfBitsA - numberOfBitsB
   })
+
+  return result
 } */
 
 //can-you-keep-a-secret ========================================== codewars
@@ -393,9 +395,82 @@ WordDictionary.prototype.search = function (word) {
   return new TreeNode(array[index], arrayToTree(array, 2 * index + 1), arrayToTree(array, 2 * index + 2))
 } */
 
-
-
-
-
-
 //
+
+//n-th-fibonacci ========================================== codewars
+
+/* function nthFibo(n) {
+  if (n === 1) return 0;
+
+  let a = 0, b = 1
+  for (let i = 3; i <= n; i++) {
+    [a, b] = [b, a + b]
+  }
+  return b
+} */
+
+//length-of-missing-array ========================================== codewars
+
+/* function getLengthOfMissingArray(arrayOfArrays) {
+  if (arrayOfArrays === null || arrayOfArrays.length === 0) return 0
+
+  const lengths = []
+  for (let arr of arrayOfArrays) {
+    if (arr === null || arr.length === 0) return 0
+    lengths.push(arr.length)
+  }
+
+  lengths.sort((a, b) => a - b)
+  for (let i = 0; i < lengths.length; i++) {
+    if (lengths[i + 1] - lengths[i] != 1) return lengths[i] + 1
+  }
+} */
+
+//pair-of-gloves ========================================== codewars
+
+/* function numberOfPairs(gloves) {
+  if (gloves.length < 2) return 0
+
+  const map = new Map()
+  gloves.forEach(color => {
+    map.has(color) ? map.set(color, map.get(color) + 1) : map.set(color, 1)
+  })
+
+  let result = 0;
+  for (let value of map.values()) {
+    result += value % 2 === 0 ? value / 2 : (value - 1) / 2
+  }
+  return result
+} */
+
+//javascript-mathematician ========================================== codewars
+
+/* function calculate(...numbers) {
+  return (...secondNumbers) => [...numbers, ...secondNumbers].reduce((sum, cur) => sum += cur, 0)
+} */
+
+//lets-recycle ========================================== codewars
+
+/* function recycle(array) {
+  const materials = ['paper', 'glass', 'organic', 'plastic']
+
+  return array.reduce((result, obj) => {
+    const i = materials.indexOf(obj.material)
+    result[i].push(obj.type)
+
+    if ('secondMaterial' in obj) {
+      const j = materials.indexOf(obj.secondMaterial)
+      result[j].push(obj.type)
+    }
+    return result
+  }, [[], [], [], []])
+} */
+
+
+
+
+
+
+
+
+
